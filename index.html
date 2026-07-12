@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>James Chen: a vision journey &mdash; 2004&ndash;2026</title>
+<style>
+  :root { --ink:#1c2434; --muted:#66718a; --bg:#faf9f7; --card:#ffffff; --line:#e6e4de; --spine:#cfccc3; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:Georgia,'Times New Roman',serif; }
+  header { max-width:860px; margin:0 auto; padding:56px 24px 6px; text-align:center; }
+  header h1 { font-size:clamp(28px,5vw,38px); margin:0 0 12px; font-weight:normal; }
+  header p.stand { font-size:16px; line-height:1.6; color:#3a4356; margin:0 auto 16px; max-width:640px; }
+  .legend { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 14px; font-family:Helvetica,Arial,sans-serif; font-size:11.5px; color:var(--muted); padding-bottom:14px; }
+  .legend label { display:flex; align-items:center; gap:5px; cursor:pointer; user-select:none; padding:3px 8px; border:1px solid var(--line); border-radius:12px; background:#fff; }
+  .legend label:hover { border-color:#b9b5aa; }
+  .legend input { accent-color:#1c2434; margin:0; }
+  .legend .fall { font-weight:bold; }
+  .legend i { width:10px; height:10px; border-radius:3px; }
+  main { max-width:980px; margin:0 auto; padding:10px 16px 90px; position:relative; }
+  main::before { content:""; position:absolute; left:50%; top:0; bottom:0; width:2px; background:var(--spine); transform:translateX(-1px); }
+  .ymark { position:relative; text-align:center; z-index:2; }
+  .ymark span { display:inline-block; font-family:Helvetica,Arial,sans-serif; font-weight:bold; font-size:11.5px; letter-spacing:.12em; color:var(--muted); background:var(--bg); border:1px solid var(--spine); border-radius:10px; padding:2px 12px; }
+  .ev { position:relative; width:50%; z-index:1; }
+  .ev.r { left:50%; padding-left:26px; }
+  .ev.l { left:0; padding-right:26px; display:flex; flex-direction:column; align-items:flex-end; }
+  .ev::before { content:""; position:absolute; top:13px; width:22px; height:1.5px; background:var(--c); opacity:.55; }
+  .ev.r::before { left:2px; }
+  .ev.l::before { right:2px; }
+  .tag { display:flex; align-items:flex-start; gap:8px; background:none; border:none; padding:2px 4px; cursor:pointer; font-family:inherit; color:inherit; text-align:left; max-width:100%; border-radius:8px; }
+  .ev.l .tag { flex-direction:row-reverse; text-align:right; }
+  .tag:hover .tt, .tag:focus-visible .tt { text-decoration:underline; text-decoration-color:var(--c); }
+  .tag:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .dot { flex:0 0 11px; width:11px; height:11px; border-radius:50%; background:var(--c); margin-top:5px; }
+  .lbl { display:flex; flex-direction:column; min-width:0; }
+  .dt { font-family:Helvetica,Arial,sans-serif; font-size:10.5px; color:var(--muted); }
+  .tt { font-size:13.5px; line-height:1.3; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:40ch; }
+  .ev.open .tt { white-space:normal; font-weight:bold; }
+  .cardwrap { width:100%; text-align:left; }
+  .card { margin:8px 0 14px; background:var(--card); border:1px solid var(--line); border-top:3px solid var(--c); border-radius:12px; padding:18px 22px; text-align:left; box-shadow:0 10px 30px rgba(28,36,52,.07); }
+  .meta { display:flex; align-items:center; gap:10px; font-family:Helvetica,Arial,sans-serif; margin-bottom:8px; }
+  .chip { font-size:10px; font-weight:bold; color:#fff; background:var(--c); padding:2px 8px; border-radius:8px; }
+  .cdate { font-size:12px; color:var(--muted); }
+  .card h3 { margin:0 0 8px; font-size:19px; font-weight:normal; line-height:1.3; }
+  .card p { margin:0; font-size:15px; line-height:1.66; color:#242e42; }
+  .info { margin-left:auto; width:20px; height:20px; border-radius:50%; border:1.5px solid var(--muted); color:var(--muted); background:none; font-family:Georgia,serif; font-style:italic; font-weight:bold; font-size:12px; line-height:1; cursor:pointer; flex:none; }
+  .info:hover { border-color:var(--c); color:var(--c); }
+  dialog { border:none; border-radius:14px; padding:0; max-width:560px; width:calc(100vw - 48px); box-shadow:0 18px 60px rgba(20,28,45,.25); }
+  dialog::backdrop { background:rgba(20,28,45,.35); }
+  .dlg { padding:24px 28px; font-family:Helvetica,Arial,sans-serif; position:relative; }
+  .dlg h2 { font-family:Georgia,serif; font-weight:normal; font-size:20px; margin:0 0 2px; }
+  .dlg .d { color:var(--muted); font-size:12.5px; margin-bottom:12px; }
+  .dlg h3 { font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:14px 0 6px; }
+  .dlg ul { margin:0; padding-left:18px; font-size:13px; line-height:1.6; color:#39445c; }
+  .dlg .src { font-size:12.5px; word-break:break-all; }
+  .dlg a { color:#1a5fa8; }
+  .dlg .close { position:absolute; right:14px; top:12px; border:none; background:none; font-size:20px; color:var(--muted); cursor:pointer; }
+  @media (max-width:760px) {
+    main::before { left:18px; }
+    .ev, .ev.r, .ev.l { width:100%; left:0; padding:0 0 0 40px; display:block; }
+    .ev.l .tag { flex-direction:row; text-align:left; }
+    .ev::before, .ev.l::before { left:20px; right:auto; }
+    .ymark { text-align:left; padding-left:2px; }
+    .tt { white-space:normal; max-width:none; }
+  }
+  footer { text-align:center; font-family:Helvetica,Arial,sans-serif; font-size:11px; color:var(--muted); padding:0 24px 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>James Chen: a vision journey</h1>
+  <p class="stand">Twenty-two years, fifty-seven documented milestones: how uncorrected refractive error went from
+  uncounted to the top of the world&rsquo;s eye health agenda. The whole journey is below &mdash; click any milestone to open its story.</p>
+  <div class="legend"><label class="fall"><input type="checkbox" id="fAll" checked> All</label><label><input type="checkbox" class="fcat" value="Adlens" checked><i style="background:#7F77DD"></i>Adlens</label><label><input type="checkbox" class="fcat" value="Adaptive Eyewear" checked><i style="background:#1D9E75"></i>Adaptive Eyewear</label><label><input type="checkbox" class="fcat" value="VFAN" checked><i style="background:#639922"></i>VFAN</label><label><input type="checkbox" class="fcat" value="Clearly & advocacy" checked><i style="background:#D85A30"></i>Clearly & advocacy</label><label><input type="checkbox" class="fcat" value="Research & evidence" checked><i style="background:#378ADD"></i>Research & evidence</label><label><input type="checkbox" class="fcat" value="Moonshot philanthropy" checked><i style="background:#D4537E"></i>Moonshot philanthropy</label><label><input type="checkbox" class="fcat" value="Recognition" checked><i style="background:#BA7517"></i>Recognition</label><label><input type="checkbox" class="fcat" value="Sector & policy" checked><i style="background:#888780"></i>Sector & policy</label></div>
+</header>
+<main>
+<div class="ymark" style="margin-top:0px"><span>2004</span></div><div class="ev r" id="m2" style="--c:#888780; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m2-card" title="WHO global estimate: 161 million visually impaired">
+    <span class="dot"></span><span class="lbl"><span class="dt">25 Jun 2004</span><span class="tt">WHO global estimate: 161 million visually impaired</span></span>
+  </button>
+  <div class="cardwrap" id="m2-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Sector &amp; policy</span><span class="cdate">25 Jun 2004</span>
+        <button class="info" aria-label="References" data-id="m2">i</button></div>
+      <h3>WHO global estimate: 161 million visually impaired</h3>
+      <p>In 2004 the WHO's global estimate stood at 161 million people visually impaired, 37 million of them blind - figures based on best-corrected acuity, so anyone whose sight could be fixed with a pair of glasses went uncounted. Uncorrected refractive error, the biggest single cause of poor vision, was missing from the world's numbers.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m3" style="--c:#7F77DD; margin-top:31px">
+  <button class="tag" aria-expanded="false" aria-controls="m3-card" title="Adlens founded">
+    <span class="dot"></span><span class="lbl"><span class="dt">17 Nov 2004</span><span class="tt">Adlens founded</span></span>
+  </button>
+  <div class="cardwrap" id="m3-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Adlens</span><span class="cdate">17 Nov 2004</span>
+        <button class="info" aria-label="References" data-id="m3">i</button></div>
+      <h3>Adlens founded</h3>
+      <p>Adlens was incorporated in Oxford in November 2004, built around adjustable-lens spectacles - the technology that would draw James into the vision sector.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:29px"><span>2005</span></div><div class="ev r" id="m4" style="--c:#7F77DD; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m4-card" title="James joins Adlens as director">
+    <span class="dot"></span><span class="lbl"><span class="dt">1 Apr 2005</span><span class="tt">James joins Adlens as director</span></span>
+  </button>
+  <div class="cardwrap" id="m4-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Adlens</span><span class="cdate">1 Apr 2005</span>
+        <button class="info" aria-label="References" data-id="m4">i</button></div>
+      <h3>James joins Adlens as director</h3>
+      <p>James joined Adlens as a director in April 2005, alongside the Oxford physicist Joshua Silver. What engaged him was the gap between the sector's numbers and what he could see: far more people needed a pair of glasses than had an eye disease, and the obstacle was delivery rather than technology.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:72px"><span>2006</span></div><div class="ev l" id="m5" style="--c:#1D9E75; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m5-card" title="Adaptive Eyewear founded">
+    <span class="dot"></span><span class="lbl"><span class="dt">11 Aug 2006</span><span class="tt">Adaptive Eyewear founded</span></span>
+  </button>
+  <div class="cardwrap" id="m5-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Adaptive Eyewear</span><span class="cdate">11 Aug 2006</span>
+        <button class="info" aria-label="References" data-id="m5">i</button></div>
+      <h3>Adaptive Eyewear founded</h3>
+      <p>In 2006 James founded Adaptive Eyewear, a not-for-profit venture to take adjustable glasses - spectacles the wearer can focus themselves - to places with almost no eye care at all. Poor vision barely registered as a global development issue at the time; James had decided to treat it as one.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:72px"><span>2007</span></div><div class="ev r" id="m6" style="--c:#888780; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m6-card" title="WHO's first estimate of uncorrected refractive error">
+    <span class="dot"></span><span class="lbl"><span class="dt">16 Nov 2007</span><span class="tt">WHO's first estimate of uncorrected refractive error</span></span>
+  </button>
+  <div class="cardwrap" id="m6-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Sector &amp; policy</span><span class="cdate">16 Nov 2007</span>
+        <button class="info" aria-label="References" data-id="m6">i</button></div>
+      <h3>WHO's first estimate of uncorrected refractive error</h3>
+      <p>In late 2007 the WHO published its first estimate of uncorrected refractive error: 153 million people. Counting them at all was a milestone, but James believed, from his own experience of glasses in the developing world, that the true number - concentrated in low- and middle-income countries - was far larger.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:72px"><span>2009</span></div><div class="ev l" id="m7" style="--c:#1D9E75; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m7-card" title="Rwanda Phase 1A pilot (Adaptive Eyewear)">
+    <span class="dot"></span><span class="lbl"><span class="dt">7 Aug 2009</span><span class="tt">Rwanda Phase 1A pilot (Adaptive Eyewear)</span></span>
+  </button>
+  <div class="cardwrap" id="m7-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Adaptive Eyewear</span><span class="cdate">7 Aug 2009</span>
+        <button class="info" aria-label="References" data-id="m7">i</button></div>
+      <h3>Rwanda Phase 1A pilot (Adaptive Eyewear)</h3>
+      <p>Adaptive Eyewear's first major project put the idea into practice. Working with Rwanda's Ministry of Health in seven villages in Gicumbi District, the team tested whether community health workers given basic training in vision screening could assess vision and dispense glasses. Over ten days more than a thousand people were examined, and the model held up.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:66px"><span>2010</span></div><div class="ev r" id="m9" style="--c:#1D9E75; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m9-card" title="MOU with Rwanda Ministry of Health">
+    <span class="dot"></span><span class="lbl"><span class="dt">3 Jun 2010</span><span class="tt">MOU with Rwanda Ministry of Health</span></span>
+  </button>
+  <div class="cardwrap" id="m9-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Adaptive Eyewear</span><span class="cdate">3 Jun 2010</span>
+        <button class="info" aria-label="References" data-id="m9">i</button></div>
+      <h3>MOU with Rwanda Ministry of Health</h3>
+      <p>Rwanda was willing where Washington was not. In June 2010 the Ministry of Health signed an agreement with Adaptive Eyewear for a national vision screening programme - one that already carried, in the document itself, the name Vision for a Nation.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m8" style="--c:#1D9E75; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m8-card" title="Meeting with the World Bank">
+    <span class="dot"></span><span class="lbl"><span class="dt">Date TBC</span><span class="tt">Meeting with the World Bank</span></span>
+  </button>
+  <div class="cardwrap" id="m8-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Adaptive Eyewear</span><span class="cdate">Date TBC</span>
+        <button class="info" aria-label="References" data-id="m8">i</button></div>
+      <h3>Meeting with the World Bank</h3>
+      <p>With the pilot results in hand, James approached the World Bank about a partnership, and was turned down. It was an understandable decision at the time: the WHO had only recently begun counting uncorrected refractive error, and there was no evidence that glasses mattered alongside priorities like malaria. The evidence James needed - reaching beyond health into income and productivity - did not yet exist, and creating it became a defining part of the work that followed.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m10" style="--c:#1D9E75; margin-top:4px">
+  <button class="tag" aria-expanded="false" aria-controls="m10-card" title="Rwanda Phase 1B piloting begins (Adaptive Eyewear)">
+    <span class="dot"></span><span class="lbl"><span class="dt">5 Jul 2010</span><span class="tt">Rwanda Phase 1B piloting begins (Adaptive Eyewear)</span></span>
+  </button>
+  <div class="cardwrap" id="m10-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Adaptive Eyewear</span><span class="cdate">5 Jul 2010</span>
+        <button class="info" aria-label="References" data-id="m10">i</button></div>
+      <h3>Rwanda Phase 1B piloting begins (Adaptive Eyewear)</h3>
+      <p>A month later, fieldwork began on the next phase: scaling the pilot from seven villages towards the whole of Gicumbi District and its 439,000 people.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m11" style="--c:#639922; margin-top:29px">
+  <button class="tag" aria-expanded="false" aria-controls="m11-card" title="Vision for a Nation (VFAN) founded">
+    <span class="dot"></span><span class="lbl"><span class="dt">17 Nov 2010</span><span class="tt">Vision for a Nation (VFAN) founded</span></span>
+  </button>
+  <div class="cardwrap" id="m11-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">VFAN</span><span class="cdate">17 Nov 2010</span>
+        <button class="info" aria-label="References" data-id="m11">i</button></div>
+      <h3>Vision for a Nation (VFAN) founded</h3>
+      <p>By the end of the year the programme name had become an organisation. Vision for a Nation was founded in London to take on what Adaptive Eyewear had started: delivering eye care to the whole of Rwanda.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:72px"><span>2012</span></div><div class="ev r" id="m12" style="--c:#639922; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m12-card" title="New MoU between VFAN and Rwanda Ministry of Health">
+    <span class="dot"></span><span class="lbl"><span class="dt">26 Mar 2012</span><span class="tt">New MoU between VFAN and Rwanda Ministry of Health</span></span>
+  </button>
+  <div class="cardwrap" id="m12-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">VFAN</span><span class="cdate">26 Mar 2012</span>
+        <button class="info" aria-label="References" data-id="m12">i</button></div>
+      <h3>New MoU between VFAN and Rwanda Ministry of Health</h3>
+      <p>In March 2012 Rwanda's government and the foundation signed the agreement that underpinned a genuinely national programme. It was designed from the outset to be handed over - the explicit goal was a service the Rwandan government would ultimately own and run itself.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m13" style="--c:#639922; margin-top:49px">
+  <button class="tag" aria-expanded="false" aria-controls="m13-card" title="Full national programme launches in Rwanda">
+    <span class="dot"></span><span class="lbl"><span class="dt">7 Nov 2012</span><span class="tt">Full national programme launches in Rwanda</span></span>
+  </button>
+  <div class="cardwrap" id="m13-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">VFAN</span><span class="cdate">7 Nov 2012</span>
+        <button class="info" aria-label="References" data-id="m13">i</button></div>
+      <h3>Full national programme launches in Rwanda</h3>
+      <p>The rollout began in Gicumbi in November 2012 and moved district by district across the country, with nurses trained in every health centre and affordable glasses on their shelves, and James driving it throughout.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:42px"><span>2013</span></div><div class="ev r" id="m15" style="--c:#639922; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m15-card" title="MoU extension signed with Ministry of Health">
+    <span class="dot"></span><span class="lbl"><span class="dt">21 May 2013</span><span class="tt">MoU extension signed with Ministry of Health</span></span>
+  </button>
+  <div class="cardwrap" id="m15-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">VFAN</span><span class="cdate">21 May 2013</span>
+        <button class="info" aria-label="References" data-id="m15">i</button></div>
+      <h3>MoU extension signed with Ministry of Health</h3>
+      <p>In 2013 the agreement with Rwanda was extended and sharpened, with universal primary eye care coverage now written into its targets.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m14" style="--c:#1D9E75; margin-top:9px">
+  <button class="tag" aria-expanded="false" aria-controls="m14-card" title="Attempt to bring adjustables to IAPB">
+    <span class="dot"></span><span class="lbl"><span class="dt">Date TBC</span><span class="tt">Attempt to bring adjustables to IAPB</span></span>
+  </button>
+  <div class="cardwrap" id="m14-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Adaptive Eyewear</span><span class="cdate">Date TBC</span>
+        <button class="info" aria-label="References" data-id="m14">i</button></div>
+      <h3>Attempt to bring adjustables to IAPB</h3>
+      <p>James also took the adjustable lens to the International Agency for the Prevention of Blindness, the sector's umbrella body, and found an organisation still centred on eye disease and surgery, with little room for an argument about glasses. He carried on regardless.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:72px"><span>2015</span></div><div class="ev r" id="m16" style="--c:#639922; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m16-card" title="New MoU with Ministry of Health (2015-2017)">
+    <span class="dot"></span><span class="lbl"><span class="dt">21 Sep 2015</span><span class="tt">New MoU with Ministry of Health (2015-2017)</span></span>
+  </button>
+  <div class="cardwrap" id="m16-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">VFAN</span><span class="cdate">21 Sep 2015</span>
+        <button class="info" aria-label="References" data-id="m16">i</button></div>
+      <h3>New MoU with Ministry of Health (2015-2017)</h3>
+      <p>By 2015 the work had gone well enough for Rwanda to commit, in a new agreement, to take full ownership of its eye care service from the start of 2018 - the handover the partnership had been designed around - while James backed the final push to reach all 15,000 villages.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m17" style="--c:#D85A30; margin-top:4px">
+  <button class="tag" aria-expanded="false" aria-controls="m17-card" title="Project Oversight begins - New York Times advertisement">
+    <span class="dot"></span><span class="lbl"><span class="dt">24 Sep 2015</span><span class="tt">Project Oversight begins - New York Times advertisement</span></span>
+  </button>
+  <div class="cardwrap" id="m17-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">24 Sep 2015</span>
+        <button class="info" aria-label="References" data-id="m17">i</button></div>
+      <h3>Project Oversight begins - New York Times advertisement</h3>
+      <p>In September 2015 James took the argument to a wider audience. The day before the UN adopted seventeen Sustainable Development Goals with no mention of vision, he placed an advertisement in The New York Times calling the omission what it was: an oversight, affecting 2.5 billion people. It was the beginning of a campaign that would occupy him for the next six years.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m18" style="--c:#888780; margin-top:4px">
+  <button class="tag" aria-expanded="false" aria-controls="m18-card" title="SDGs launched at UNGA - vision omitted">
+    <span class="dot"></span><span class="lbl"><span class="dt">25 Sep 2015</span><span class="tt">SDGs launched at UNGA - vision omitted</span></span>
+  </button>
+  <div class="cardwrap" id="m18-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Sector &amp; policy</span><span class="cdate">25 Sep 2015</span>
+        <button class="info" aria-label="References" data-id="m18">i</button></div>
+      <h3>SDGs launched at UNGA - vision omitted</h3>
+      <p>The 2030 Agenda was adopted with vision absent from every goal and target. For James it summed up the problem: an issue counted in millions had been easy to leave out.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m19" style="--c:#D85A30; margin-top:4px">
+  <button class="tag" aria-expanded="false" aria-controls="m19-card" title="Project Oversight launch event, New York (World Sight Day)">
+    <span class="dot"></span><span class="lbl"><span class="dt">8 Oct 2015</span><span class="tt">Project Oversight launch event, New York (World Sight Day)</span></span>
+  </button>
+  <div class="cardwrap" id="m19-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">8 Oct 2015</span>
+        <button class="info" aria-label="References" data-id="m19">i</button></div>
+      <h3>Project Oversight launch event, New York (World Sight Day)</h3>
+      <p>On World Sight Day James launched Project Oversight at a reception in New York, announcing seed grants for ideas to reimagine access to vision correction. The initiative would shortly grow into something larger.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m20" style="--c:#D85A30; margin-top:4px">
+  <button class="tag" aria-expanded="false" aria-controls="m20-card" title="James commits to fund the campaign that becomes Clearly">
+    <span class="dot"></span><span class="lbl"><span class="dt">Oct 2015 &middot; approx.</span><span class="tt">James commits to fund the campaign that becomes Clearly</span></span>
+  </button>
+  <div class="cardwrap" id="m20-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">Oct 2015 &middot; approx.</span>
+        <button class="info" aria-label="References" data-id="m20">i</button></div>
+      <h3>James commits to fund the campaign that becomes Clearly</h3>
+      <p>That same month James made the decision that shaped the years ahead: he committed to back a global campaign to put vision correction on the world's agenda, bringing his energy, expertise and network to it. It became Clearly.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:38px"><span>2016</span></div><div class="ev l" id="m21" style="--c:#D85A30; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m21-card" title="Launch of Clearly">
+    <span class="dot"></span><span class="lbl"><span class="dt">6 Apr 2016</span><span class="tt">Launch of Clearly</span></span>
+  </button>
+  <div class="cardwrap" id="m21-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">6 Apr 2016</span>
+        <button class="info" aria-label="References" data-id="m21">i</button></div>
+      <h3>Launch of Clearly</h3>
+      <p>The campaign went public on 6 April 2016, launching from Hong Kong with the 2.5 billion figure in the opening line of its press release; James spent the morning of the launch making the case on radio and television. The name stated the goal: to help the world to see clearly.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m22" style="--c:#BA7517; margin-top:14px">
+  <button class="tag" aria-expanded="false" aria-controls="m22-card" title="VFAN wins UK Charity Award">
+    <span class="dot"></span><span class="lbl"><span class="dt">9 Jun 2016</span><span class="tt">VFAN wins UK Charity Award</span></span>
+  </button>
+  <div class="cardwrap" id="m22-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Recognition</span><span class="cdate">9 Jun 2016</span>
+        <button class="info" aria-label="References" data-id="m22">i</button></div>
+      <h3>VFAN wins UK Charity Award</h3>
+      <p>The Rwanda work was recognised at the UK Charity Awards, taking the top prize for international aid and development - external validation that the model was working.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m23" style="--c:#D85A30; margin-top:27px">
+  <button class="tag" aria-expanded="false" aria-controls="m23-card" title="Clearly Vision Prize">
+    <span class="dot"></span><span class="lbl"><span class="dt">13 Oct 2016</span><span class="tt">Clearly Vision Prize</span></span>
+  </button>
+  <div class="cardwrap" id="m23-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">13 Oct 2016</span>
+        <button class="info" aria-label="References" data-id="m23">i</button></div>
+      <h3>Clearly Vision Prize</h3>
+      <p>Clearly's first major initiative was a global prize for innovations in access to vision correction, which drew more than a hundred entries from twenty-one countries. Vula Mobile took the inaugural award.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:38px"><span>2017</span></div><div class="ev r" id="m24" style="--c:#D85A30; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m24-card" title="Clearly 2035 summit, Murano, Venice">
+    <span class="dot"></span><span class="lbl"><span class="dt">4 Apr 2017</span><span class="tt">Clearly 2035 summit, Murano, Venice</span></span>
+  </button>
+  <div class="cardwrap" id="m24-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">4 Apr 2017</span>
+        <button class="info" aria-label="References" data-id="m24">i</button></div>
+      <h3>Clearly 2035 summit, Murano, Venice</h3>
+      <p>In April 2017 James convened a summit on Murano, the island where spectacles were first made seven centuries earlier. Alongside the eye care sector he brought his own network of influential figures from politics, campaigning, business and communications - people the sector rarely reached - and the discussions produced the campaign's central idea: vision as a golden thread running through the Sustainable Development Goals, a development issue rather than a narrow health one.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m25" style="--c:#D85A30; margin-top:37px">
+  <button class="tag" aria-expanded="false" aria-controls="m25-card" title="Precursor meeting with UN members">
+    <span class="dot"></span><span class="lbl"><span class="dt">20 Sep 2017</span><span class="tt">Precursor meeting with UN members</span></span>
+  </button>
+  <div class="cardwrap" id="m25-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">20 Sep 2017</span>
+        <button class="info" aria-label="References" data-id="m25">i</button></div>
+      <h3>Precursor meeting with UN members</h3>
+      <p>During UNGA week, James and his team held early conversations at the United Nations - the beginnings of what became the UN's first working group on vision.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m26" style="--c:#D85A30; margin-top:4px">
+  <button class="tag" aria-expanded="false" aria-controls="m26-card" title="Clearly - the book published">
+    <span class="dot"></span><span class="lbl"><span class="dt">12 Oct 2017</span><span class="tt">Clearly - the book published</span></span>
+  </button>
+  <div class="cardwrap" id="m26-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">12 Oct 2017</span>
+        <button class="info" aria-label="References" data-id="m26">i</button></div>
+      <h3>Clearly - the book published</h3>
+      <p>In October 2017 James published Clearly, setting out the campaign's case and its plan. It was written with the following spring in mind: something to put into the hands of the Commonwealth's leaders.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:17px"><span>2018</span></div><div class="ev l" id="m27" style="--c:#639922; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m27-card" title="VFAN Rwanda completion - handover to Ministry of Health">
+    <span class="dot"></span><span class="lbl"><span class="dt">1 Jan 2018</span><span class="tt">VFAN Rwanda completion - handover to Ministry of Health</span></span>
+  </button>
+  <div class="cardwrap" id="m27-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">VFAN</span><span class="cdate">1 Jan 2018</span>
+        <button class="info" aria-label="References" data-id="m27">i</button></div>
+      <h3>VFAN Rwanda completion - handover to Ministry of Health</h3>
+      <p>On 1 January 2018, as agreed three years earlier, Rwanda's government took full ownership of its national eye care service - the first low-income country to offer its whole population access to vision correction. An eye health module in the national nurse training curriculum meant the expertise would renew itself with each new cohort.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m28" style="--c:#D85A30; margin-top:23px">
+  <button class="tag" aria-expanded="false" aria-controls="m28-card" title="CHOGM, London">
+    <span class="dot"></span><span class="lbl"><span class="dt">17 Apr 2018</span><span class="tt">CHOGM, London</span></span>
+  </button>
+  <div class="cardwrap" id="m28-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">17 Apr 2018</span>
+        <button class="info" aria-label="References" data-id="m28">i</button></div>
+      <h3>CHOGM, London</h3>
+      <p>The book did its work. Following a letter to Commonwealth leaders in May 2017, James's team made their case at the 2018 Heads of Government Meeting in London, and all 53 leaders committed to 'quality eye care for all' - the first formal recognition of poor vision at a gathering of world leaders.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m29" style="--c:#D85A30; margin-top:4px">
+  <button class="tag" aria-expanded="false" aria-controls="m29-card" title="White-rimmed glasses at Global Citizen, Brixton">
+    <span class="dot"></span><span class="lbl"><span class="dt">17 Apr 2018</span><span class="tt">White-rimmed glasses at Global Citizen, Brixton</span></span>
+  </button>
+  <div class="cardwrap" id="m29-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">17 Apr 2018</span>
+        <button class="info" aria-label="References" data-id="m29">i</button></div>
+      <h3>White-rimmed glasses at Global Citizen, Brixton</h3>
+      <p>That evening the campaign took a lighter form: James on stage at a Global Citizen concert in Brixton in oversized white-rimmed glasses, with Prime Minister Gaston Browne of Antigua &amp; Barbuda and President Mokgweetsi Masisi of Botswana wearing the same.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m30" style="--c:#639922; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m30-card" title="MoU with Ministry of Health (2018-2020)">
+    <span class="dot"></span><span class="lbl"><span class="dt">15 May 2018</span><span class="tt">MoU with Ministry of Health (2018-2020)</span></span>
+  </button>
+  <div class="cardwrap" id="m30-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">VFAN</span><span class="cdate">15 May 2018</span>
+        <button class="info" aria-label="References" data-id="m30">i</button></div>
+      <h3>MoU with Ministry of Health (2018-2020)</h3>
+      <p>The Rwanda partnership continued past the handover, with a further agreement covering school screening in the Western Province.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m31" style="--c:#378ADD; margin-top:4px">
+  <button class="tag" aria-expanded="false" aria-controls="m31-card" title="Rothschild cost analysis of the Rwanda programme">
+    <span class="dot"></span><span class="lbl"><span class="dt">15 May 2018</span><span class="tt">Rothschild cost analysis of the Rwanda programme</span></span>
+  </button>
+  <div class="cardwrap" id="m31-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Research &amp; evidence</span><span class="cdate">15 May 2018</span>
+        <button class="info" aria-label="References" data-id="m31">i</button></div>
+      <h3>Rothschild cost analysis of the Rwanda programme</h3>
+      <p>The programme's economics were assessed independently by the Fondation Ophtalmologique A. de Rothschild, which found it cost-effective by the WHO's benchmark and affordable for the government to sustain. Together with the clinical evaluation, the case to other countries was complete: the model works, and it can be afforded.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m32" style="--c:#378ADD; margin-top:15px">
+  <button class="tag" aria-expanded="false" aria-controls="m32-card" title="PROSPER I published in The Lancet Global Health">
+    <span class="dot"></span><span class="lbl"><span class="dt">23 Jul 2018</span><span class="tt">PROSPER I published in The Lancet Global Health</span></span>
+  </button>
+  <div class="cardwrap" id="m32-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Research &amp; evidence</span><span class="cdate">23 Jul 2018</span>
+        <button class="info" aria-label="References" data-id="m32">i</button></div>
+      <h3>PROSPER I published in The Lancet Global Health</h3>
+      <p>PROSPER answered the question the World Bank had asked years earlier. The first randomised controlled trial of its kind found that giving Indian tea pickers an affordable pair of reading glasses raised their productivity by more than a fifth - evidence that correcting vision is an economic intervention as well as a medical one. Published in The Lancet Global Health and covered by The Economist and the BBC, it became central to the campaign's case at the UN.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m33" style="--c:#D85A30; margin-top:17px">
+  <button class="tag" aria-expanded="false" aria-controls="m33-card" title="UN Friends of Vision group convened">
+    <span class="dot"></span><span class="lbl"><span class="dt">11 Oct 2018</span><span class="tt">UN Friends of Vision group convened</span></span>
+  </button>
+  <div class="cardwrap" id="m33-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">11 Oct 2018</span>
+        <button class="info" aria-label="References" data-id="m33">i</button></div>
+      <h3>UN Friends of Vision group convened</h3>
+      <p>The conversations begun at the UN in September 2017 led, a year later, to the first meeting of the UN Friends of Vision on World Sight Day 2018 - convened by Ambassador Aubrey Webson of Antigua &amp; Barbuda, with diplomats from ten countries taking part.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m34" style="--c:#378ADD; margin-top:12px">
+  <button class="tag" aria-expanded="false" aria-controls="m34-card" title="Rwanda PEC process evaluation published">
+    <span class="dot"></span><span class="lbl"><span class="dt">7 Dec 2018</span><span class="tt">Rwanda PEC process evaluation published</span></span>
+  </button>
+  <div class="cardwrap" id="m34-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Research &amp; evidence</span><span class="cdate">7 Dec 2018</span>
+        <button class="info" aria-label="References" data-id="m34">i</button></div>
+      <h3>Rwanda PEC process evaluation published</h3>
+      <p>Rather than assess its own work, VFAN commissioned an independent academic evaluation of the Rwanda programme. Published in BMC Health Services Research, it found the care delivered matched the design, with over ninety per cent of observed examinations performed correctly.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:24px"><span>2019</span></div><div class="ev l" id="m35" style="--c:#D85A30; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m35-card" title="Sightgeist, Science Museum, London">
+    <span class="dot"></span><span class="lbl"><span class="dt">28 Mar 2019</span><span class="tt">Sightgeist, Science Museum, London</span></span>
+  </button>
+  <div class="cardwrap" id="m35-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">28 Mar 2019</span>
+        <button class="info" aria-label="References" data-id="m35">i</button></div>
+      <h3>Sightgeist, Science Museum, London</h3>
+      <p>Clearly filled London's Science Museum for Sightgeist, with June Sarpong hosting, Brian Cox giving the keynote, a DFID minister announcing new funding from the stage - and nine-year-old Lowri Moore asking Disney why its princesses never wear glasses. It was the first time the global vision community had gathered in one room.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m36" style="--c:#639922; margin-top:18px">
+  <button class="tag" aria-expanded="false" aria-controls="m36-card" title="VFAN Ghana programme in the field">
+    <span class="dot"></span><span class="lbl"><span class="dt">19 Jun 2019</span><span class="tt">VFAN Ghana programme in the field</span></span>
+  </button>
+  <div class="cardwrap" id="m36-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">VFAN</span><span class="cdate">19 Jun 2019</span>
+        <button class="info" aria-label="References" data-id="m36">i</button></div>
+      <h3>VFAN Ghana programme in the field</h3>
+      <p>The model moved to a second country. By mid-2019 Vision for a Nation was on the ground in Ghana, working with the Ghana Health Service to test whether the Rwanda approach could be repeated.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m37" style="--c:#D4537E; margin-top:4px">
+  <button class="tag" aria-expanded="false" aria-controls="m37-card" title="James debuts 'privatise failure, socialise success' at AVPN, Singapore">
+    <span class="dot"></span><span class="lbl"><span class="dt">25 Jun 2019</span><span class="tt">James debuts 'privatise failure, socialise success' at AVPN, Singapore</span></span>
+  </button>
+  <div class="cardwrap" id="m37-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Moonshot philanthropy</span><span class="cdate">25 Jun 2019</span>
+        <button class="info" aria-label="References" data-id="m37">i</button></div>
+      <h3>James debuts 'privatise failure, socialise success' at AVPN, Singapore</h3>
+      <p>Speaking at the Asian Venture Philanthropy Network conference in Singapore, James set out the philosophy behind his approach in a phrase that stuck: philanthropists should privatise failure and socialise success, taking on the risks that institutions cannot. The formulation later became the core of moonshot philanthropy.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m40" style="--c:#D85A30; margin-top:4px">
+  <button class="tag" aria-expanded="false" aria-controls="m40-card" title="World Report on Vision comes to UN headquarters">
+    <span class="dot"></span><span class="lbl"><span class="dt">43790 &middot; approx.</span><span class="tt">World Report on Vision comes to UN headquarters</span></span>
+  </button>
+  <div class="cardwrap" id="m40-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">43790 &middot; approx.</span>
+        <button class="info" aria-label="References" data-id="m40">i</button></div>
+      <h3>World Report on Vision comes to UN headquarters</h3>
+      <p>A month later the report was launched at UN Headquarters, hosted by Ambassador Webson and the WHO, with Dr Binagwaho on the panel and the President of the General Assembly receiving a copy. Two days after that, Friends of Vision ran eye tests in the UN Secretariat lobby.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m38" style="--c:#378ADD; margin-top:16px">
+  <button class="tag" aria-expanded="false" aria-controls="m38-card" title="DRIVE research programme begins (SWISH trial)">
+    <span class="dot"></span><span class="lbl"><span class="dt">15 Sep 2019</span><span class="tt">DRIVE research programme begins (SWISH trial)</span></span>
+  </button>
+  <div class="cardwrap" id="m38-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Research &amp; evidence</span><span class="cdate">15 Sep 2019</span>
+        <button class="info" aria-label="References" data-id="m38">i</button></div>
+      <h3>DRIVE research programme begins (SWISH trial)</h3>
+      <p>James put the evidence work on a systematic footing with DRIVE, a portfolio of trials across education, road safety, income and wellbeing, designed to establish what vision correction changes in each of those domains.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m39" style="--c:#888780; margin-top:5px">
+  <button class="tag" aria-expanded="false" aria-controls="m39-card" title="WHO World Report on Vision">
+    <span class="dot"></span><span class="lbl"><span class="dt">8 Oct 2019</span><span class="tt">WHO World Report on Vision</span></span>
+  </button>
+  <div class="cardwrap" id="m39-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Sector &amp; policy</span><span class="cdate">8 Oct 2019</span>
+        <button class="info" aria-label="References" data-id="m39">i</button></div>
+      <h3>WHO World Report on Vision</h3>
+      <p>In October 2019 the WHO published its first World Report on Vision, putting the global figure at 2.2 billion people - counting, for the first time, the uncorrected refractive error James had spent years arguing about. The sector's numbers had moved from millions to billions.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m41" style="--c:#BA7517; margin-top:13px">
+  <button class="tag" aria-expanded="false" aria-controls="m41-card" title="Honorary doctorate, University of Bath">
+    <span class="dot"></span><span class="lbl"><span class="dt">10 Dec 2019</span><span class="tt">Honorary doctorate, University of Bath</span></span>
+  </button>
+  <div class="cardwrap" id="m41-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Recognition</span><span class="cdate">10 Dec 2019</span>
+        <button class="info" aria-label="References" data-id="m41">i</button></div>
+      <h3>Honorary doctorate, University of Bath</h3>
+      <p>The year closed with an honorary doctorate from the University of Bath, recognising the vision work and Rwanda in particular.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:17px"><span>2020</span></div><div class="ev r" id="m42" style="--c:#D85A30; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m42-card" title="Glasses in Classes campaign">
+    <span class="dot"></span><span class="lbl"><span class="dt">26 Feb 2020</span><span class="tt">Glasses in Classes campaign</span></span>
+  </button>
+  <div class="cardwrap" id="m42-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">26 Feb 2020</span>
+        <button class="info" aria-label="References" data-id="m42">i</button></div>
+      <h3>Glasses in Classes campaign</h3>
+      <p>The campaign turned to children with Glasses in Classes, launched at St James's Palace with the Countess of Wessex hosting - a push for sight tests and glasses in every school.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m43" style="--c:#D85A30; margin-top:49px">
+  <button class="tag" aria-expanded="false" aria-controls="m43-card" title="Through the Looking Glasses anthology">
+    <span class="dot"></span><span class="lbl"><span class="dt">8 Oct 2020</span><span class="tt">Through the Looking Glasses anthology</span></span>
+  </button>
+  <div class="cardwrap" id="m43-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">8 Oct 2020</span>
+        <button class="info" aria-label="References" data-id="m43">i</button></div>
+      <h3>Through the Looking Glasses anthology</h3>
+      <p>For World Sight Day 2020, leading children's authors and illustrators - Quentin Blake among them - contributed to an anthology of stories about seeing clearly, read aloud as bedtime stories by well-known names as the sun set in each time zone.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:19px"><span>2021</span></div><div class="ev r" id="m44" style="--c:#D85A30; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m44-card" title="Clearly merges with IAPB">
+    <span class="dot"></span><span class="lbl"><span class="dt">4 Jan 2021</span><span class="tt">Clearly merges with IAPB</span></span>
+  </button>
+  <div class="cardwrap" id="m44-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">4 Jan 2021</span>
+        <button class="info" aria-label="References" data-id="m44">i</button></div>
+      <h3>Clearly merges with IAPB</h3>
+      <p>Clearly's campaigning had proved effective enough that the sector's peak body wanted it in-house. The campaign merged into the IAPB in January 2021, with James continuing as Global Ambassador, and its machinery for reaching policymakers and governments now worked from inside the sector, at scale.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m45" style="--c:#888780; margin-top:9px">
+  <button class="tag" aria-expanded="false" aria-controls="m45-card" title="Lancet Global Health Commission on Global Eye Health">
+    <span class="dot"></span><span class="lbl"><span class="dt">16 Feb 2021</span><span class="tt">Lancet Global Health Commission on Global Eye Health</span></span>
+  </button>
+  <div class="cardwrap" id="m45-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Sector &amp; policy</span><span class="cdate">16 Feb 2021</span>
+        <button class="info" aria-label="References" data-id="m45">i</button></div>
+      <h3>Lancet Global Health Commission on Global Eye Health</h3>
+      <p>The Lancet Global Health Commission on Global Eye Health confirmed uncorrected refractive error as the leading cause of vision impairment worldwide and set out the evidence for eye health as a development issue - the golden thread argument, now in the field's most authoritative pages.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m46" style="--c:#888780; margin-top:22px">
+  <button class="tag" aria-expanded="false" aria-controls="m46-card" title="World Health Assembly endorses first global refractive error target">
+    <span class="dot"></span><span class="lbl"><span class="dt">27 May 2021</span><span class="tt">World Health Assembly endorses first global refractive error target</span></span>
+  </button>
+  <div class="cardwrap" id="m46-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Sector &amp; policy</span><span class="cdate">27 May 2021</span>
+        <button class="info" aria-label="References" data-id="m46">i</button></div>
+      <h3>World Health Assembly endorses first global refractive error target</h3>
+      <p>Then the world's health ministers made it policy. The World Health Assembly adopted the first-ever global targets for eye care, and refractive error was at their heart: a 40-percentage-point increase in effective coverage by 2030. The issue that wasn't even counted twenty years earlier now had its own global target.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m47" style="--c:#D4537E; margin-top:4px">
+  <button class="tag" aria-expanded="false" aria-controls="m47-card" title="James launches 'moonshot philanthropy'">
+    <span class="dot"></span><span class="lbl"><span class="dt">15 Jun 2021</span><span class="tt">James launches 'moonshot philanthropy'</span></span>
+  </button>
+  <div class="cardwrap" id="m47-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Moonshot philanthropy</span><span class="cdate">15 Jun 2021</span>
+        <button class="info" aria-label="References" data-id="m47">i</button></div>
+      <h3>James launches 'moonshot philanthropy'</h3>
+      <p>With the campaign's methods being vindicated at the UN and the WHO, James gave the philosophy behind them a name: moonshot philanthropy - the argument that owners of capital are free to take risks institutions cannot, privatising failure and socialising success. What had been his own practice for years became a framework offered to other philanthropists.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m48" style="--c:#D85A30; margin-top:8px">
+  <button class="tag" aria-expanded="false" aria-controls="m48-card" title="UN Resolution on vision">
+    <span class="dot"></span><span class="lbl"><span class="dt">23 Jul 2021</span><span class="tt">UN Resolution on vision</span></span>
+  </button>
+  <div class="cardwrap" id="m48-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">23 Jul 2021</span>
+        <button class="info" aria-label="References" data-id="m48">i</button></div>
+      <h3>UN Resolution on vision</h3>
+      <p>On 23 July 2021 all 193 member states of the United Nations unanimously adopted the first resolution on vision - 'Vision for Everyone' - committing the world to eye care for all by 2030. Times Square carried the news that night. Six years after a newspaper advertisement pointed out an oversight, the issue had the UN's unanimous voice behind it.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m49" style="--c:#378ADD; margin-top:8px">
+  <button class="tag" aria-expanded="false" aria-controls="m49-card" title="ENGINE research project launched">
+    <span class="dot"></span><span class="lbl"><span class="dt">1 Sep 2021</span><span class="tt">ENGINE research project launched</span></span>
+  </button>
+  <div class="cardwrap" id="m49-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Research &amp; evidence</span><span class="cdate">1 Sep 2021</span>
+        <button class="info" aria-label="References" data-id="m49">i</button></div>
+      <h3>ENGINE research project launched</h3>
+      <p>Years of campaigning - and the PROSPER result above all - had changed the way the scientific community viewed refractive error. The measure of that shift: the Wellcome Trust, one of the world's great research funders, awarded over £3 million for ENGINE, a five-year suite of global trials on vision and the Sustainable Development Goals. The question James had once struggled to get taken seriously was now a mainstream research priority.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m50" style="--c:#888780; margin-top:4px">
+  <button class="tag" aria-expanded="false" aria-controls="m50-card" title="IAPB launches 2030 In Sight strategy">
+    <span class="dot"></span><span class="lbl"><span class="dt">Sep 2021 &middot; approx.</span><span class="tt">IAPB launches 2030 In Sight strategy</span></span>
+  </button>
+  <div class="cardwrap" id="m50-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Sector &amp; policy</span><span class="cdate">Sep 2021 &middot; approx.</span>
+        <button class="info" aria-label="References" data-id="m50">i</button></div>
+      <h3>IAPB launches 2030 In Sight strategy</h3>
+      <p>A quiet high point came with the sector's new strategy, 2030 In Sight: for the first time it spoke not only of blindness and eye disease, but of vision in all its facets - as something to elevate, integrate and activate across health, education and economies. It was the very shift in worldview James had been campaigning for since the World Bank showed him the door.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:36px"><span>2022</span></div><div class="ev l" id="m51" style="--c:#639922; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m51-card" title="VFAN merges with Vision Aid Overseas to form Vision Action">
+    <span class="dot"></span><span class="lbl"><span class="dt">1 Mar 2022</span><span class="tt">VFAN merges with Vision Aid Overseas to form Vision Action</span></span>
+  </button>
+  <div class="cardwrap" id="m51-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">VFAN</span><span class="cdate">1 Mar 2022</span>
+        <button class="info" aria-label="References" data-id="m51">i</button></div>
+      <h3>VFAN merges with Vision Aid Overseas to form Vision Action</h3>
+      <p>With Rwanda complete, Vision for a Nation merged with Vision Aid Overseas in March 2022 to form Vision Action, transferring its Ghana programme and its experience, with James as patron.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m52" style="--c:#888780; margin-top:4px">
+  <button class="tag" aria-expanded="false" aria-controls="m52-card" title="2030 In Sight Live launched, Dubai">
+    <span class="dot"></span><span class="lbl"><span class="dt">2 Mar 2022</span><span class="tt">2030 In Sight Live launched, Dubai</span></span>
+  </button>
+  <div class="cardwrap" id="m52-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Sector &amp; policy</span><span class="cdate">2 Mar 2022</span>
+        <button class="info" aria-label="References" data-id="m52">i</button></div>
+      <h3>2030 In Sight Live launched, Dubai</h3>
+      <p>A day later the sector gathered in Dubai for the first 2030 In Sight Live, the opening event in a series of annual summits under the new strategy.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:72px"><span>2023</span></div><div class="ev l" id="m53" style="--c:#888780; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m53-card" title="ILO/IAPB report: Eye Health and the World of Work">
+    <span class="dot"></span><span class="lbl"><span class="dt">5 Sep 2023</span><span class="tt">ILO/IAPB report: Eye Health and the World of Work</span></span>
+  </button>
+  <div class="cardwrap" id="m53-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Sector &amp; policy</span><span class="cdate">5 Sep 2023</span>
+        <button class="info" aria-label="References" data-id="m53">i</button></div>
+      <h3>ILO/IAPB report: Eye Health and the World of Work</h3>
+      <p>The International Labour Organization and the IAPB published a joint report on eye health in the workplace, extending the economic case into labour policy.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m54" style="--c:#BA7517; margin-top:17px">
+  <button class="tag" aria-expanded="false" aria-controls="m54-card" title="Spears Impact Award">
+    <span class="dot"></span><span class="lbl"><span class="dt">22 Nov 2023</span><span class="tt">Spears Impact Award</span></span>
+  </button>
+  <div class="cardwrap" id="m54-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Recognition</span><span class="cdate">22 Nov 2023</span>
+        <button class="info" aria-label="References" data-id="m54">i</button></div>
+      <h3>Spears Impact Award</h3>
+      <p>James received the Spear's Impact Award, recognising two decades of work on vision correction.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:31px"><span>2024</span></div><div class="ev l" id="m55" style="--c:#D4537E; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m55-card" title="Moonshot philanthropy enters the academic literature">
+    <span class="dot"></span><span class="lbl"><span class="dt">Apr 2024 &middot; approx.</span><span class="tt">Moonshot philanthropy enters the academic literature</span></span>
+  </button>
+  <div class="cardwrap" id="m55-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Moonshot philanthropy</span><span class="cdate">Apr 2024 &middot; approx.</span>
+        <button class="info" aria-label="References" data-id="m55">i</button></div>
+      <h3>Moonshot philanthropy enters the academic literature</h3>
+      <p>The University of Kent's Centre for Philanthropy published a working paper examining moonshot philanthropy - the concept moving from practice into the academic literature.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m56" style="--c:#888780; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m56-card" title="WHO SPECS 2030 initiative launched">
+    <span class="dot"></span><span class="lbl"><span class="dt">14 May 2024</span><span class="tt">WHO SPECS 2030 initiative launched</span></span>
+  </button>
+  <div class="cardwrap" id="m56-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Sector &amp; policy</span><span class="cdate">14 May 2024</span>
+        <button class="info" aria-label="References" data-id="m56">i</button></div>
+      <h3>WHO SPECS 2030 initiative launched</h3>
+      <p>The WHO launched SPECS 2030, a global initiative dedicated to refractive error with its own network and targets. An issue that barely registered when James began now had a WHO programme of its own.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m57" style="--c:#D85A30; margin-top:4px">
+  <button class="tag" aria-expanded="false" aria-controls="m57-card" title="Chen Yet-Sen Family Foundation joins the IAPB Board">
+    <span class="dot"></span><span class="lbl"><span class="dt">24 May 2024</span><span class="tt">Chen Yet-Sen Family Foundation joins the IAPB Board</span></span>
+  </button>
+  <div class="cardwrap" id="m57-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Clearly &amp; advocacy</span><span class="cdate">24 May 2024</span>
+        <button class="info" aria-label="References" data-id="m57">i</button></div>
+      <h3>Chen Yet-Sen Family Foundation joins the IAPB Board</h3>
+      <p>The relationship with the IAPB deepened in 2024, when James's family foundation joined its Board of Trustees and became a Band A member, supporting the sector's next major undertaking.</p>
+    </article>
+  </div>
+</div><div class="ev r" id="m58" style="--c:#BA7517; margin-top:36px">
+  <button class="tag" aria-expanded="false" aria-controls="m58-card" title="Falling Walls Science Breakthrough of the Year Award">
+    <span class="dot"></span><span class="lbl"><span class="dt">7 Nov 2024</span><span class="tt">Falling Walls Science Breakthrough of the Year Award</span></span>
+  </button>
+  <div class="cardwrap" id="m58-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Recognition</span><span class="cdate">7 Nov 2024</span>
+        <button class="info" aria-label="References" data-id="m58">i</button></div>
+      <h3>Falling Walls Science Breakthrough of the Year Award</h3>
+      <p>The research programme James champions was named a Science Breakthrough of the Year at the Falling Walls Summit in Berlin, in the social sciences category, as 'Breaking the Wall of Vision-Driven Development'.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:17px"><span>2025</span></div><div class="ev l" id="m59" style="--c:#D4537E; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m59-card" title="USAID funding withdrawn - Ghana programme and SL2 trial">
+    <span class="dot"></span><span class="lbl"><span class="dt">24 Jan 2025</span><span class="tt">USAID funding withdrawn - Ghana programme and SL2 trial</span></span>
+  </button>
+  <div class="cardwrap" id="m59-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Moonshot philanthropy</span><span class="cdate">24 Jan 2025</span>
+        <button class="info" aria-label="References" data-id="m59">i</button></div>
+      <h3>USAID funding withdrawn - Ghana programme and SL2 trial</h3>
+      <p>Then, without warning, US foreign aid funding was withdrawn - closing the Ghana programme and halting the SL2 trial mid-stream. The shock sharpened the argument at the heart of James's moonshot philanthropy rather than settling it: no funder, government or philanthropist, is permanent - which is why his model asks philanthropy to do the things that outlast funding. Take the early risk. Build the evidence. Build what governments can own. The trials already completed, the UN resolution, the WHO targets - none of these could be unfunded. Work still on donor life-support could be, and was.</p>
+    </article>
+  </div>
+</div><div class="ymark" style="margin-top:72px"><span>2026</span></div><div class="ev r" id="m60" style="--c:#378ADD; margin-top:6px">
+  <button class="tag" aria-expanded="false" aria-controls="m60-card" title="PROSPER II published in the British Journal of Ophthalmology">
+    <span class="dot"></span><span class="lbl"><span class="dt">7 Apr 2026</span><span class="tt">PROSPER II published in the British Journal of Ophthalmology</span></span>
+  </button>
+  <div class="cardwrap" id="m60-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Research &amp; evidence</span><span class="cdate">7 Apr 2026</span>
+        <button class="info" aria-label="References" data-id="m60">i</button></div>
+      <h3>PROSPER II published in the British Journal of Ophthalmology</h3>
+      <p>The evidence keeps building. PROSPER II, a randomised controlled trial in Indian garment factories, extended the productivity findings beyond the tea fields into one of the world's largest and most structured industries - showing that glasses lift output on the factory floor too. James continues to back the trials that are changing how policymakers, governments and funders see uncorrected refractive error: not a health footnote, but the golden thread running through the development agenda.</p>
+    </article>
+  </div>
+</div><div class="ev l" id="m61" style="--c:#888780; margin-top:45px">
+  <button class="tag" aria-expanded="false" aria-controls="m61-card" title="First Global Summit for Eye Health (forthcoming)">
+    <span class="dot"></span><span class="lbl"><span class="dt">2 Nov 2026</span><span class="tt">First Global Summit for Eye Health (forthcoming)</span></span>
+  </button>
+  <div class="cardwrap" id="m61-card" hidden>
+    <article class="card">
+      <div class="meta"><span class="chip">Sector &amp; policy</span><span class="cdate">2 Nov 2026</span>
+        <button class="info" aria-label="References" data-id="m61">i</button></div>
+      <h3>First Global Summit for Eye Health (forthcoming)</h3>
+      <p>The next chapter has a date. On 2 November 2026, St John's hosts the first Global Summit for Eye Health - convened by the Government of Antigua &amp; Barbuda, the nation whose UN ambassador championed Friends of Vision, in collaboration with the WHO, with James's foundation among the backers. The issue that once struggled for a hearing now has a summit of its own.</p>
+    </article>
+  </div>
+</div>
+</main>
+<dialog id="refdlg"><div class="dlg" id="dlgbody"></div></dialog>
+<footer>Compiled by Graeme MacKenzie &middot; generated from gMacKenzieMasterTimeline.xlsx &middot; demonstration build</footer>
+<script>
+const REFS = {"m2": {"title": "WHO global estimate: 161 million visually impaired", "date": "25 Jun 2004", "facts": ["Resnikoff et al., 'Global data on visual impairment in the year 2002', Bull WHO 2004;82:844-51", "Submitted 2 Mar 2004; final revision 15 Jun 2004; accepted 25 Jun 2004; published Nov 2004 issue", "2002 estimate: 161m visually impaired, 37m blind", "Based on best-corrected acuity - URE excluded by definition", "Context: VISION 2020 launched Feb 1999 (WHO/IAPB); Dandona & Dandona, Bull WHO 2001;79:237-43 argued for presenting vision", "Dandona presenting-vision estimate (2006): ~259m"], "source": "https://pmc.ncbi.nlm.nih.gov/articles/instance/2623053/pdf/15640920.pdf"}, "m3": {"title": "Adlens founded", "date": "17 Nov 2004", "facts": ["Incorporated 17 Nov 2004 as Cheltrading 396 Ltd (Companies House 05288859)", "Renamed J and J Technologies Ltd 2 Feb 2005; Adlens Ltd 3 May 2007", "Co-founded by James Chen and Prof Joshua Silver (Oxford)", "Product: adjustable-lens spectacles", "Company still active"], "source": "https://find-and-update.company-information.service.gov.uk/company/05288859"}, "m4": {"title": "James joins Adlens as director", "date": "1 Apr 2005", "facts": ["Appointed director 1 Apr 2005 (Companies House officers record)", "Start of James's vision-sector involvement"], "source": "https://find-and-update.company-information.service.gov.uk/company/05288859/officers"}, "m5": {"title": "Adaptive Eyewear founded", "date": "11 Aug 2006", "facts": ["Adaptive Eyewear Ltd incorporated 11 Aug 2006 (Companies House 05903599)", "Not-for-profit vehicle for adjustable glasses in the developing world", "CEO: Sjoerd Hannema"], "source": "https://find-and-update.company-information.service.gov.uk/company/05903599"}, "m6": {"title": "WHO's first estimate of uncorrected refractive error", "date": "16 Nov 2007", "facts": ["Resnikoff et al., 'Global magnitude of visual impairment caused by uncorrected refractive errors in 2004', Bull WHO 2008;86:63-70", "Submitted 11 Feb 2007; accepted 11 Jun 2007; published online 16 Nov 2007; print issue Jan 2008", "DOI 10.2471/BLT.07.041210", "First WHO estimate of URE: 153m visually impaired (range 123-184m), of whom 8m blind (2004 data; presbyopia excluded)", "Combined with the 161m best-corrected estimate: 314m visually impaired from all causes", "URE becomes the main cause of low vision and second cause of blindness", "Early results trailed in WHO press release, World Sight Day, 11 Oct 2006"], "source": "https://doi.org/10.2471/BLT.07.041210"}, "m7": {"title": "Rwanda Phase 1A pilot (Adaptive Eyewear)", "date": "7 Aug 2009", "facts": ["Fieldwork 7-20 Aug 2009; Cyuru cell, Rukomo Sector, Gicumbi District", "CHW/nurse training 4-7 Aug under MoH Chief Ophthalmic Clinical Officer", "Enumeration from Fri 7 Aug; screening/dispensing Mon 10 - Thu 20 Aug", "7 villages; 1,061 examined in 10 days by 7 CHWs + 1 nurse", "46% needed correction; average five-line acuity improvement", "Follow-up to 16 Nov 2009", "Report: MacKenzie (Adlens) & Johnson (Adaptive Eyewear)"], "source": "vfanPhase1Areport.pdf"}, "m9": {"title": "MOU with Rwanda Ministry of Health", "date": "3 Jun 2010", "facts": ["MOU signed 3 Jun 2010 (date stamp on signed copy)", "Parties: Adaptive Eyewear (AE) and Rwanda Ministry of Health", "Signatories: Dr Richard Sezibera (Minister of Health); Sjoerd Hannema (CEO, AE)", "One-year validity, renewable; five-year programme framework", "Clause IV.2 names the programme 'Vision for a Nation'"], "source": "mou03JUN2010.pdf"}, "m8": {"title": "Meeting with the World Bank", "date": "Date TBC", "facts": ["Date unknown; placed 2010 (GM and Seven Hills draft)", "James proposed adjustable-glasses partnership for low-resource countries", "Rejected; James describes 'two years knocking on the door' (Rattling the Cages)", "Essay cites 2013 World Bank org chart - all five senior figures wore glasses"], "source": "-"}, "m10": {"title": "Rwanda Phase 1B piloting begins (Adaptive Eyewear)", "date": "5 Jul 2010", "facts": ["Fieldwork began 5 Jul 2010 (GM)", "Phase 1B plan dated 22 Apr 2010; 17-week programme of community, school and health centre assessments", "Target: whole Gicumbi District (439,000 people)", "Plan had scheduled a 10 May start; fieldwork followed MOU signature"], "source": "vfanPhase1BPlan.pdf"}, "m11": {"title": "Vision for a Nation (VFAN) founded", "date": "17 Nov 2010", "facts": ["VFAN Foundation incorporated in UK 17 Nov 2010 (Companies House 07443046)", "Name taken from the AE-MoH MOU programme title", "Registered as NGO in Rwanda 2011", "Funders over 5+ years: James, DFID, USAID, UBS Optimus Foundation", "Dissolved 11 Apr 2023, after transfer to Vision Action"], "source": "https://find-and-update.company-information.service.gov.uk/company/07443046"}, "m12": {"title": "New MoU between VFAN and Rwanda Ministry of Health", "date": "26 Mar 2012", "facts": ["New MoU signed 26 Mar 2012: VFAN and Rwanda MoH", "Date per recitals of the 21 May 2013 extension and 21 Sep 2015 MoU", "Replaced the 2010 AE MOU; underpinned the national programme", "Designed for eventual government handover"], "source": "MoH-VFANF MoU extension signed.pdf (recitals); New MoU between MoH and VFAN September 2015.pdf (recitals)"}, "m13": {"title": "Full national programme launches in Rwanda", "date": "7 Nov 2012", "facts": ["First district PEC training: Gicumbi, 7 Nov 2012 (VFAN training database)", "Then Rutsiro 12 Nov, Rulindo 26 Nov, Karongi 5 Dec 2012; district by district through 2013", "MoH letter to Mayors, 24 Dec 2012 (Binagwaho): training 'started in October 2012 in Gicumbi'", "411 assessments recorded in late 2012", "All 30 districts / 473 health centres covered by Oct 2013", "National PEC curriculum developed with the Fred Hollows Foundation"], "source": "1. VFAN training database Apr 2013.xlsx; MoH letter to Mayors 24 Dec 2012.pdf"}, "m15": {"title": "MoU extension signed with Ministry of Health", "date": "21 May 2013", "facts": ["Extension and modification signed 21 May 2013", "Signatories: Dr Agnes Binagwaho (Minister of Health); Sjoerd Hannema (Exec Director, VFAN)", "Targets: Universal PEC coverage by 2015; nursing schools graduating PEC-trained nurses from Jan 2014", "DFID GPAF grant (Sep 2011-Oct 2012) had funded training in all 450 health centres"], "source": "MoH-VFANF MoU extension signed.pdf"}, "m14": {"title": "Attempt to bring adjustables to IAPB", "date": "Date TBC", "facts": ["Date unknown - Seven Hills draft placeholder", "James's approach to IAPB with adjustable glasses; sector then disease/surgery-focused", "VFAN an IAPB Group C member by 2017"], "source": "-"}, "m16": {"title": "New MoU with Ministry of Health (2015-2017)", "date": "21 Sep 2015", "facts": ["Concluded 21 Sep 2015; superseded 2012 MoU and 2013 extension", "Effective through 31 Dec 2017", "VFAN commitment c.US$4.8m for 2015-2017", "MoH to assume full responsibility from 1 Jan 2018", "Village outreach Oct 2015-end 2017: PEC clinics to all 15,000 villages"], "source": "New MoU between MoH and VFAN September 2015.pdf"}, "m17": {"title": "Project Oversight begins - New York Times advertisement", "date": "24 Sep 2015", "facts": ["Full-page advertisement in The New York Times, 24 Sep 2015 (per Rattling the Cages)", "Day before UN adoption of the SDGs", "2.5bn poor-vision figure; 'oversight' framing", "Genesis of the Clearly campaign; site project-oversight.org (defunct)"], "source": "https://clearly.world/rattling-the-cages/"}, "m18": {"title": "SDGs launched at UNGA - vision omitted", "date": "25 Sep 2015", "facts": ["2030 Agenda / 17 SDGs adopted at UNGA, 25 Sep 2015 (A/RES/70/1)", "No mention of vision in any goal or target"], "source": "https://sdgs.un.org/2030agenda"}, "m19": {"title": "Project Oversight launch event, New York (World Sight Day)", "date": "8 Oct 2015", "facts": ["World Sight Day reception, The Glass Houses, Manhattan, 8 Oct 2015", "Hosted by VFAN and Adlens; James set out 'patient philanthropy'", "Challenge announced: three US$100,000 seed grants", "Guests incl. former NY governor David Paterson; Adlens CEO Mike Ferrara spoke", "Adlens pledged 7.5% of sales to year-end; Vision Monday coverage 12 Oct 2015"], "source": "https://www.visionmonday.com/latest-news/article/philanthropist-james-chen-launches-project-to-combat-global-problem-of-poor-vision-1/"}, "m20": {"title": "James commits to fund the campaign that becomes Clearly", "date": "Oct 2015", "facts": ["James's signed ambassador letters (Mar 2016): 'In October last year I agreed to personally fund a campaign...'", "Year-long global campaign; launched as Clearly, Apr 2016", "2015: met Greg Nugent (Inc London, ex-London 2012 marketing director); advisers Godric Smith, Catherine Macleod"], "source": "Prof Brian Cox 03MAR2016.docx (and other signed ambassador letters)"}, "m21": {"title": "Launch of Clearly", "date": "6 Apr 2016", "facts": ["Public launch 6 Apr 2016: PRNewswire release (Hong Kong, 9am per market); James on Bloomberg Radio HK 9:30am; CNBC HK 7 Apr", "Launch release opened with the 2.5bn figure; US$3tn economic cost cited", "James (2nd edn, 2025): 'the establishment of Clearly in 2016'", "Corporate vehicle Clearly Initiatives incorporated later: 24 May 2017 (Companies House 10787608; active); initial trustees Penny Chu, Nick Mercer, Paul Tomasic (2nd edn acknowledgements)", "Campaign partner: Greg Nugent and Inc. London; comms: Seven Hills"], "source": "https://www.prnewswire.com/news-releases/global-campaign-launches-to-help-the-world-to-see-wwwclearlyworld-574741941.html"}, "m22": {"title": "VFAN wins UK Charity Award", "date": "9 Jun 2016", "facts": ["UK Charity Awards 2016, top prize, International Aid & Development", "Ceremony 9 Jun 2016, Mermaid Theatre, London; host Bill Turnbull", "For the Rwanda nationwide PEC programme", "Also 2016: VFAN CEO Tom Rosewall (CEO from 2014) named Third Sector Rising Chief Executive"], "source": "https://www.iapb.org/news/uk-charity-awards-2016-awards-top-prize-to-vfan/"}, "m23": {"title": "Clearly Vision Prize", "date": "13 Oct 2016", "facts": ["Winners announced World Sight Day, 13 Oct 2016, London", "Inaugural winner: Vula Mobile, crowned by Sir Mark Walport (Government Chief Scientific Adviser)", "US$250k prize pool; 100+ entries from 21 countries", "Clearly Labs hackathons: San Francisco, London, Hong Kong", "Mar 2016 ambassador letters had pitched US$300k"], "source": "https://www.iapb.org/news/clearly-vision-prize-awardees/"}, "m24": {"title": "Clearly 2035 summit, Murano, Venice", "date": "4 Apr 2017", "facts": ["Clearly 2035 summit, Murano, Venice, 4 Apr 2017 (GM)", "Murano: birthplace of spectacles 700 years earlier; '2035' after the Mars ambition", "'Golden thread' framing emerged (intervention credited to Godric Smith)", "Attendees incl. Kirsty McNeill (Save the Children), Kevin Cahill (Comic Relief), Alastair Campbell, sector leaders", "Outcome: target CHOGM 2018"], "source": "-"}, "m25": {"title": "Precursor meeting with UN members", "date": "20 Sep 2017", "facts": ["Meeting with UN members during UNGA week, 20 Sep 2017 (GM)", "Seed of the UN Friends of Vision group", "2017 UNGA breakfast roundtable: speakers incl. Dr Agnes Binagwaho and Baroness Sugg, 17 guests (Rattling the Cages)"], "source": "-"}, "m26": {"title": "Clearly - the book published", "date": "12 Oct 2017", "facts": ["'Clearly: How a 700-year old invention can change the world for ever', Biteback Publishing", "UK publication 12 Oct 2017; US edition Apr 2018", "Draft ghostwritten by Phil Webster; edited by Will Straw", "Framework: the four D's - Distribution, Diagnosis, Dollars, Demand", "Launch endorsement: Helle Thorning-Schmidt (CEO, Save the Children)", "Durable catalogue record: Wellcome Collection, wellcomecollection.org/works/ay7y5cfy (Biteback's own page has been retired)"], "source": "https://www.amazon.co.uk/Clearly-700-year-invention-change-world/dp/1785902709"}, "m27": {"title": "VFAN Rwanda completion - handover to Ministry of Health", "date": "1 Jan 2018", "facts": ["Rwanda MoH assumed full responsibility 1 Jan 2018 (per 2015 MoU)", "First low-income country with universal access to vision correction", "11.8m population; 502 health centres; 2,797 nurses trained; all 15,000 villages reached; 2.5m+ screenings", "Eye health module embedded in national nurse training curriculum", "Completion letter 11 Jan 2019 (Tony Hulton to Min. Diane Gashumba); stamped received 16 Jan 2019"], "source": "New MoU between MoH and VFAN September 2015.pdf; VFAN Rwanda PEC Programme Completion Letter 20190111.pdf"}, "m28": {"title": "CHOGM, London", "date": "17 Apr 2018", "facts": ["CHOGM, London; commitment 17 Apr 2018 (GM photo with Bill Gates)", "All 53 Commonwealth leaders committed to 'quality eye care for all'", "First formal recognition of poor vision at a meeting of world leaders", "'Vision for the Commonwealth' coalition; lobbying via Committee of the Whole", "Vision Catalyst Fund ($1bn target) announced ahead of CHOGM, Mar 2018 - partners incl. Standard Chartered, UBS, Essilor, James, IAPB", "The push began with Clearly's letter to the Commonwealth Heads of Government, May 2017, which 'led to an invitation' (Clearly, 2nd edn)"], "source": "https://www.visionforthecommonwealth.com/"}, "m29": {"title": "White-rimmed glasses at Global Citizen, Brixton", "date": "17 Apr 2018", "facts": ["Global Citizen Live, O2 Academy Brixton, 17 Apr 2018", "On stage: James; PM Gaston Browne (Antigua & Barbuda); President Mokgweetsi Masisi (Botswana)", "White-rimmed glasses worn on stage; Getty Images frames of the moment"], "source": "https://www.gettyimages.com/photos/gaston-browne"}, "m30": {"title": "MoU with Ministry of Health (2018-2020)", "date": "15 May 2018", "facts": ["Effective 15 May 2018 (date stamp on effective-date clause)", "Signatories: Dr Diane Gashumba (Minister); Dr Abdallah Uwihoreye (Country Director) and Tony Hulton (CEO), VFAN", "Two-year validity within three-year programme framework", "Covered the Western Province school screening programme (CRI-funded)"], "source": "MOU 2018 VISION FOR A NATION AND MOH.pdf"}, "m31": {"title": "Rothschild cost analysis of the Rwanda programme", "date": "15 May 2018", "facts": ["Fondation Ophtalmologique A. de Rothschild; analyst Dede Sika Kossi; commissioned by VFAN; report 15 May 2018", "Programme cost to VFAN 2012-17: RWF 5.44bn (£4.6m)", "Cost per outcome: £2 screening; £25 glasses; £4 eye medication; £1,667 referral", "Cost-effective by WHO benchmark (Rwanda GDP pc US$710, 2015) on all outcomes except nurse training", "MoH net budget impact 2018-20: RWF 309.2m (c.£277,000 - report's '£27,775' is a slipped digit), declining yearly", "Avoided productivity loss 2015-20: RWF 36.0bn (c.£30.4m)"], "source": "FoR Cost Anlaysis of Primary Eye Care Programme in Rwanda v1.0 Final report 20180515.pdf"}, "m32": {"title": "PROSPER I published in The Lancet Global Health", "date": "23 Jul 2018", "facts": ["Published online 23 Jul 2018, The Lancet Global Health (print Sep 2018, 6(9):e1019-27)", "Reddy et al.; DOI 10.1016/S2214-109X(18)30329-2", "RCT, Assam, India; 751 tea pickers, mostly women, aged 40+", "Reading glasses raised productivity 21.7% overall; 31.6% in over-50s", "Delivery cost c.US$10 per participant", "Coverage: The Economist (2 Aug 2018, 'Wear glasses, earn more'); BBC"], "source": "https://doi.org/10.1016/S2214-109X(18)30329-2"}, "m33": {"title": "UN Friends of Vision group convened", "date": "11 Oct 2018", "facts": ["First meeting, World Sight Day, 11 Oct 2018", "Convened by Amb. Aubrey Webson (Antigua & Barbuda; legally blind)", "10 countries: Antigua & Barbuda, Bangladesh, Barbados, Botswana, Dominica, Grenada, Rwanda, St Kitts & Nevis, Suriname, UK", "James introduced the session; Peter Holland (IAPB CEO) and Dr Agnes Binagwaho spoke", "Later co-chairs: Ireland and Bangladesh; 70+ countries have participated", "Active through 2019: FoV breakfast at UN High-Level Political Forum, 17 Jul 2019, Japan Society NY - chaired by Amb. Webson; 17 countries; WHO ASG announced World Report on Vision timing at the meeting"], "source": "https://www.iapb.org/news/launch-of-un-friends-of-vision-group/"}, "m34": {"title": "Rwanda PEC process evaluation published", "date": "7 Dec 2018", "facts": ["Yip et al., BMC Health Services Research 2018;18:950 (online 7 Dec 2018)", "Rwanda Primary Eye Care Process Evaluation Group; ethics: LSHTM + Rwanda National Ethics Committee", "Funder: VFAN (independent academic team)", "Finding: >90% of observed examination processes correct (30 nurses, 19 health centres)", "2,707 nurses trained to Oct 2016; MoUs 2012-15 and 2015-17 as framework", "Authors incl. Dr Jennifer Yip, Dr Wanjiku Mathenge, Prof Hannah Faal"], "source": "https://doi.org/10.1186/s12913-018-3718-1"}, "m35": {"title": "Sightgeist, Science Museum, London", "date": "28 Mar 2019", "facts": ["Science Museum, London, 28 Mar 2019", "MC: June Sarpong; keynote: Prof Brian Cox", "Lord Bates (DFID) announced £9.8m for assistive technology", "Lowri Moore (9) appealed to Disney for a princess in glasses", "First gathering of the global vision community; precursor to 2030 In Sight Live"], "source": "https://clearly.world/news/james-chen-the-scandal-the-world-ignored/"}, "m36": {"title": "VFAN Ghana programme in the field", "date": "19 Jun 2019", "facts": ["Family call minutes, 19 Jun 2019: 'Field work in Ghana is underway, and training for nurses to begin in July'", "First nurse training completed 25 Jul 2019: 18 nurses trained with the Ghana Health Service (family call minutes, 24 Jul 2019)", "School screening from Oct 2019 - photographed 1 Oct 2019, Swedru Catholic A School, Agona West District (photo EXIF)", "Registered as foreign NGO in Ghana with one staff by Nov 2018 (GiveWell conversation notes, 1 Nov 2018); Central Region launch planned 'early 2019'", "Regions: Central and Upper East; funders: James, USAID, UBS Optimus Foundation, Medicor Foundation", "Programme lifetime to 2022: 359 nurses trained; 67,000+ vision assessments (Vision Action history)", "Third-country scoping active by Jan 2020: 30 countries assessed, Philippines top-ranked (Hulton matrix)"], "source": "Family call minutes 19 Jun 2019 & 24 Jul 2019 (GM's files); VFAN FY2019 Annual Report; Ghana photo EXIF"}, "m37": {"title": "James debuts 'privatise failure, socialise success' at AVPN, Singapore", "date": "25 Jun 2019", "facts": ["Keynote at the 2019 AVPN Conference, Singapore, 25 Jun 2019", "Spoke alongside Eileen Rockefeller Growald; fireside chat moderated by Deval Sanghavi (Dasra)", "Written up by AVPN (30 Jun 2019) and Alliance Magazine as 'Privatizing failure, socializing success' (Jul 2019)", "No earlier published use of the formulation found; inverts the older 'privatise profits, socialise losses' trope", "Precursor: 'catalytic philanthropy' messaging strategy in family call minutes, Feb 2019"], "source": "Family call minutes, 19 Jun & 24 Jul 2019 (GM's files); alliancemagazine.org/blog/privatizing-failure-socializing-success"}, "m40": {"title": "World Report on Vision comes to UN headquarters", "date": "43790", "facts": ["World Report on Vision launched at UNHQ, New York, Tuesday 19 Nov 2019; hosted by WHO and the Mission of Antigua & Barbuda (Amb. Webson)", "Panel: Dr Agnes Binagwaho, Jennifer Gersbeck; IAPB CEO Peter Holland spoke", "UNGA President Tijjani Bande gave concluding remarks and received the report", "Vision screenings and eye exhibition in the UN Secretariat lobby, 21 Nov 2019 - organised under UN Friends of Vision by IAPB with Clearly, OneSight, Sightsavers, The Fred Hollows Foundation, VisionSpring and The Vision Council (iapb.org/news/vision-screenings-at-the-un-secretariat)", "Report stat cited at launch: 191 of 194 national health strategies made no mention of eye care"], "source": "https://www.who.int/news/item/18-11-2019-launch-of-the-world-report-on-vision-at-the-united-nations-headquarters"}, "m38": {"title": "DRIVE research programme begins (SWISH trial)", "date": "15 Sep 2019", "facts": ["SWISH collaboration agreement: project commencement 15 Sep 2019 (clause); version 14 Oct 2019; fully executed 15 Oct 2019", "Parties: Queen's University Belfast (lead), Clearly, Ningxia University, Zhongshan Ophthalmic Center, Stanford REAP", "DRIVE portfolio funded by the Chen Yet-Sen Family Foundation (drivesdgs.org)", "PROSPER I (2018) counted as the portfolio's first trial", "Corroboration: family call minutes 19 Jun 2019 - 'Education research to commence in September'"], "source": "https://www.drivesdgs.org/"}, "m39": {"title": "WHO World Report on Vision", "date": "8 Oct 2019", "facts": ["WHO World Report on Vision, launched 8 Oct 2019 (World Sight Day)", "2.2bn people with vision impairment, including near vision", "At least 1bn preventable or unaddressed", "First WHO report to fully count URE and presbyopia"], "source": "https://www.who.int/publications/i/item/9789241516570"}, "m41": {"title": "Honorary doctorate, University of Bath", "date": "10 Dec 2019", "facts": ["Honorary LLD, University of Bath, 10 Dec 2019, Assembly Rooms, Bath", "For work on global vision, especially Rwanda", "Oration: Dr Michael Proulx"], "source": "https://www.bath.ac.uk/announcements/eyesight-philanthropist-james-chen-awarded-honorary-degree-by-university-of-bath/"}, "m42": {"title": "Glasses in Classes campaign", "date": "26 Feb 2020", "facts": ["Launched 26 Feb 2020 (GM)", "'Vision for the Commonwealth' event, St James's Palace, hosted by HRH Sophie, Countess of Wessex", "Aim: sight tests, glasses and treatments in every school", "Context: 300m+ children with myopia, projected 500m by 2050", "UK research: 250,000 4-5 year-olds missing vision screenings"], "source": "-"}, "m43": {"title": "Through the Looking Glasses anthology", "date": "8 Oct 2020", "facts": ["Launched 8am UK, 8 Oct 2020 (World Sight Day) by OneSight, Clearly and IAPB", "30 stories/illustrations; 35 contributors from 17 countries; editor Nicolette Jones; foreword by James", "Contributors incl. Quentin Blake, Ruskin Bond, Cressida Cowell, Michael Morpurgo, Lauren Child", "Bedtime Stories readings followed sunset across time zones - readers incl. Michelle Yeoh, Billie Jean King", "Free digital book: throughthelookingglasses.world"], "source": "https://quentinblake.com/news/through-looking-glasses-book-published-clearly"}, "m44": {"title": "Clearly merges with IAPB", "date": "4 Jan 2021", "facts": ["Merger effective 4 Jan 2021 (announced 13 Aug 2020)", "James became IAPB Global Ambassador; chairs the campaign committee", "Chen Yet-Sen Family Foundation funding to IAPB advocacy", "IAPB CEO: Peter Holland"], "source": "https://www.iapb.org/news/clearly-to-merge-into-iapb/"}, "m45": {"title": "Lancet Global Health Commission on Global Eye Health", "date": "16 Feb 2021", "facts": ["Burton et al., 'The Lancet Global Health Commission on Global Eye Health: vision beyond 2020'", "Online 16 Feb 2021; print Apr 2021, 9(4):e489-551; DOI 10.1016/S2214-109X(20)30488-5", "1.1bn people with unaddressed vision impairment; URE the leading cause", "Eye health positioned as essential to the SDGs", "UN-level launch at the Friends of Vision high-level virtual event, 24 Feb 2021 (with the IAPB Vision Atlas), addressed by UNGA President Volkan Bozkir"], "source": "https://doi.org/10.1016/S2214-109X(20)30488-5"}, "m46": {"title": "World Health Assembly endorses first global refractive error target", "date": "27 May 2021", "facts": ["WHA74, 27 May 2021: first-ever global eye care targets for 2030", "Effective refractive error coverage (eREC): +40 percentage points", "Effective cataract surgery coverage (eCSC): +30 percentage points", "WHO announcement, 27 May 2021"], "source": "https://www.who.int/news/item/27-05-2021-global-eye-care-targets-endorsed-by-member-states-at-the-74th-world-health-assembly"}, "m47": {"title": "James launches 'moonshot philanthropy'", "date": "15 Jun 2021", "facts": ["'Moonshot Philanthropy' section live on jameschen.vision by 15 Jun 2021", "Tagline: 'Privatising failure, socialising success'", "'Rattling the Cages' essay, 23 Jul 2021; Do One Better podcast; Lux Magazine profile Dec 2021", "Precursors: 'catalytic philanthropy' messaging strategy in family call minutes, Feb 2019; James's AVPN 2019 speech featured in Alliance Magazine as 'Privatizing failure, socializing success' (Jul 2019) - the tagline public two years before the 'moonshot' name"], "source": "https://www.jameschen.vision/moonshot-philanthropy/"}, "m48": {"title": "UN Resolution on vision", "date": "23 Jul 2021", "facts": ["A/RES/75/310 'Vision for Everyone' adopted unanimously, 23 Jul 2021, by all 193 member states", "Tabled by UN Friends of Vision; championed by Amb. Aubrey Webson", "Commitment: eye care for all by 2030", "Draft tabled at the FoV high-level virtual event, 24 Feb 2021, attended by UNGA President Volkan Bozkir", "Celebrated with Times Square billboard takeover"], "source": "https://undocs.org/en/A/RES/75/310"}, "m49": {"title": "ENGINE research project launched", "date": "1 Sep 2021", "facts": ["Wellcome Investigator Award, ref 222490/Z/21/Z; award letter 22 Jul 2021; start 1 Sep 2021", "Up to £3,100,312 over 60 months, to Queen's University Belfast", "Title: 'A Suite of Studies Exploring the Impact of Vision Care on Achieving the SDGs in Low and Middle-Income Countries'", "Trials: STABLE (driving safety), CLEVER (education), THRIFT (financial inclusion), PROSPER (productivity)"], "source": "https://www.qub.ac.uk/sites/engine-vision/"}, "m50": {"title": "IAPB launches 2030 In Sight strategy", "date": "Sep 2021", "facts": ["IAPB sector strategy '2030 In Sight: Ending Avoidable Sight Loss' - cover states 'Version Sept. 2021' (no day given)", "Pillars: Elevate, Integrate, Activate", "Strategic reframing from blindness to vision", "Document production chain: designed PDF finalised 6 Dec 2021 (PDF metadata, archived original); uploaded to iapb.org Feb 2022; sector showcase at 2030 In Sight Live, Dubai, 2 Mar 2022", "No September 2021 launch event found in public record (searched Jul 2026); launch day query open with IAPB/Jen"], "source": "https://www.iapb.org/wp-content/uploads/2022/02/2030inSight-Strategy-Document-Sep2021-English.pdf"}, "m51": {"title": "VFAN merges with Vision Aid Overseas to form Vision Action", "date": "1 Mar 2022", "facts": ["Merger 1 Mar 2022: VFAN + Vision Aid Overseas (founded 1985) = Vision Action", "Ghana programme and staff transferred; VFAN CEO and a trustee joined the VA board", "James became Patron of Vision Action"], "source": "https://www.visionaction.org.uk/about-us/our-history/"}, "m52": {"title": "2030 In Sight Live launched, Dubai", "date": "2 Mar 2022", "facts": ["First 2030 In Sight Live, Dubai, launched 2 Mar 2022", "First of the annual IAPB sector gatherings"], "source": "https://www.iapb.org/learn/our-events/events-calendar/2030-in-sight-live/"}, "m53": {"title": "ILO/IAPB report: Eye Health and the World of Work", "date": "5 Sep 2023", "facts": ["'Eye Health and the World of Work', joint ILO-IAPB report", "Launched 5 Sep 2023", "Extends the productivity/economic case for eye health into labour policy"], "source": "https://www.ilo.org/publications/eye-health-and-world-work"}, "m54": {"title": "Spears Impact Award", "date": "22 Nov 2023", "facts": ["Spear's Impact Award, 22 Nov 2023 (GM photos of the event)", "Recognition of two decades of vision-correction philanthropy"], "source": "https://spearswms.com/impact-philanthropy/james-chen-winner-impact-award-spears-awards-2023/"}, "m55": {"title": "Moonshot philanthropy enters the academic literature", "date": "Apr 2024", "facts": ["University of Kent, Centre for Philanthropy: 'We Stand for Ambition: Moonshot Philanthropy' working paper, Apr 2024"], "source": "https://research.kent.ac.uk/philanthropy/wp-content/uploads/sites/2278/2024/06/What_is_MP_April_2024.pdf"}, "m56": {"title": "WHO SPECS 2030 initiative launched", "date": "14 May 2024", "facts": ["WHO SPECS 2030 initiative launched 14 May 2024, Geneva", "Inaugural meeting of the Global SPECS Network", "WHO flagship programme dedicated to refractive error, supporting the eREC +40pp target"], "source": "https://www.who.int/news-room/events/detail/2024/05/14/default-calendar/launch-of-the-who-specs-2030-initiative--including-the-inaugural-meeting-of-the-global-specs-network"}, "m57": {"title": "Chen Yet-Sen Family Foundation joins the IAPB Board", "date": "24 May 2024", "facts": ["Jennifer Chen (CEO, Chen Yet-Sen Family Foundation) appointed to the IAPB Board of Trustees, 24 May 2024", "CYSFF became an IAPB Band A member at the same time", "James (2nd edn): 'from 2024, my family foundation is now represented on the IAPB Board of Trustees and is supporting another moonshot aim of the first ever Global Summit for Eye Health'"], "source": "https://www.iapb.org/news/the-chen-yet-sen-family-foundation-bolsters-iapbs-mission-with-band-a-membership/"}, "m58": {"title": "Falling Walls Science Breakthrough of the Year Award", "date": "7 Nov 2024", "facts": ["Falling Walls Science Breakthrough of the Year, Social Sciences & Humanities", "Award ceremony 7 Nov 2024, Falling Walls Science Summit, Berlin (7-9 Nov)", "'Breaking the Wall of Vision-Driven Development' - Queen's University Belfast and Orbis International", "ENGINE trials recognised; 1,100+ nominations from 300+ institutions"], "source": "https://falling-walls.com/falling-walls-science-summit/science-summit-2025/falling-walls-winners-2024"}, "m59": {"title": "USAID funding withdrawn - Ghana programme and SL2 trial", "date": "24 Jan 2025", "facts": ["US executive order, 20 Jan 2025: 90-day pause on foreign development assistance", "Stop-work orders on existing foreign aid from 24 Jan 2025", "c.83% of USAID programmes cut (announced Mar 2025); USAID closed 1 Jul 2025", "Ghana eye care programme closed; SL2 (Sierra Leone Sees to Learn) trial funding withdrawn"], "source": "https://www.kff.org/global-health-policy/u-s-foreign-aid-freeze-dissolution-of-usaid-timeline-of-events/"}, "m60": {"title": "PROSPER II published in the British Journal of Ophthalmology", "date": "7 Apr 2026", "facts": ["BJO Online First 7 Apr 2026 (accepted 22 Mar 2026); DOI 10.1136/bjo-2025-328563", "Pant et al.; RCT, Karnataka, India; 682 garment workers (99% female), aged 35+", "Free near glasses raised productivity 5.7% (95% CI 1.04-10.4%)", "Funders: Chen Yet-Sen Family Foundation, USAID DIV, Livelihood Impact Fund", "Trial registration NCT04629820", "USAID funding sought from mid-2019 (family call minutes, Jun/Jul 2019: positive first-round feedback; USAID offered additional $250k for long-term household earnings measurement)"], "source": "https://doi.org/10.1136/bjo-2025-328563"}, "m61": {"title": "First Global Summit for Eye Health (forthcoming)", "date": "2 Nov 2026", "facts": ["First Global Summit for Eye Health: 2 Nov 2026, St John's, Antigua & Barbuda", "Hosted by the Government of Antigua & Barbuda; technical collaboration with WHO; supported by IAPB", "Pillars: Act, Allocate, Accelerate - commitments to integrate eye health into national development plans, increase sustainable financing, scale proven solutions", "CYSFF supporting (James, 2nd edn: 'another moonshot aim')", "Target: the 1 billion people living with avoidable sight loss"], "source": "https://www.iapb.org/news/invitation-issued-to-world-leaders-for-first-ever-global-summit-for-eye-health/"}};
+document.querySelectorAll('.tag').forEach(t => {
+  t.addEventListener('click', () => {
+    const ev = t.closest('.ev');
+    const wrap = ev.querySelector('.cardwrap');
+    const open = ev.classList.toggle('open');
+    wrap.hidden = !open;
+    t.setAttribute('aria-expanded', open);
+    if (open) wrap.scrollIntoView({behavior:'smooth', block:'nearest'});
+  });
+});
+const dlg = document.getElementById('refdlg');
+const dlgbody = document.getElementById('dlgbody');
+document.querySelectorAll('.info').forEach(b => {
+  b.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const d = REFS[b.dataset.id];
+    const facts = d.facts.map(f => `<li>${f}</li>`).join('');
+    const src = d.source.startsWith('http')
+      ? `<a href="${d.source}" target="_blank" rel="noopener">${d.source}</a>`
+      : (d.source && d.source !== '-' ? d.source : 'On the compiler&rsquo;s word &mdash; evidence sought');
+    dlgbody.innerHTML = `<button class="close" aria-label="Close">&times;</button>
+      <h2>${d.title}</h2><div class="d">${d.date}</div>
+      <h3>Key facts</h3><ul>${facts}</ul><h3>Source</h3><div class="src">${src}</div>`;
+    dlgbody.querySelector('.close').addEventListener('click', () => dlg.close());
+    dlg.showModal();
+  });
+});
+dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+
+const catBoxes = [...document.querySelectorAll('.fcat')];
+const allBox = document.getElementById('fAll');
+function applyFilter() {
+  const on = new Set(catBoxes.filter(b => b.checked).map(b => b.value));
+  document.querySelectorAll('.ev').forEach(ev => {
+    const chip = ev.querySelector('.chip');
+    ev.style.display = on.has(chip.textContent) ? '' : 'none';
+  });
+  document.querySelectorAll('.yearmark').forEach(ym => {
+    let n = ym.nextElementSibling, any = false;
+    while (n && !n.classList.contains('yearmark')) {
+      if (n.classList.contains('ev') && n.style.display !== 'none') { any = true; break; }
+      n = n.nextElementSibling;
+    }
+    ym.style.display = any ? '' : 'none';
+  });
+  allBox.checked = catBoxes.every(b => b.checked);
+  allBox.indeterminate = !allBox.checked && catBoxes.some(b => b.checked);
+}
+catBoxes.forEach(b => b.addEventListener('change', applyFilter));
+allBox.addEventListener('change', () => { const v = allBox.checked; catBoxes.forEach(b => b.checked = v); applyFilter(); });
+applyFilter();
+</script>
+</body>
+</html>
